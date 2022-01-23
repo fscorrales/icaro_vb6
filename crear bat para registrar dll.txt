@@ -1,0 +1,67 @@
+Te comento que no es algo complicado, hay varias cosas que tenes que tener en cuenta antes de realizar este tipo de ejecutables. Primero debes saber que hay Dll (Librerias) y OCX (Objetos Active x) que deben ser instalados del lado del cliente y que cuando te instalas el VB 6.0 se te instalan, por ello es que a vos te anda y a los clientes no. 
+
+Debes Crearte una carpeta llamada instalador. Dentro de la Misma debes crear dos carpetas una para las dll y otra para los ocx del sistema. Como la VB6ES.DLL, VB6STKIT.DLL (ambas son del VBasic 6.0 y solo las tenes vos) entonces estas dlls entre otras las debes compiar a esta carpeta y apuntar tu instalador alli. 
+
+Para registrar tus dlls en el cliente debes hacer lo siguiente 
+te creas un archivo.bat en donde pones los siguiente: 
+Esto lo que hace es registrarte en el registro las librerias para tu aplicacion 
+
+regsvr32 .\dlls\VB6ES.DLL /u /s 
+regsvr32 .\dlls\VB6ES.DLL /s 
+regsvr32 .\dlls\VB6STKIT.DLL /u /s 
+regsvr32 .\dlls\VB6STKIT.DLL /s 
+
+Te paso la lista que debes registrar comunmente, estas son las librerias que se usan por lo general para programas en VB 6.0 
+
+regsvr32 .\dlls\ASYCFILT.DLL /u /s 
+regsvr32 .\dlls\ASYCFILT.DLL /s 
+regsvr32 .\dlls\CMDLGES.DLL /u /s 
+regsvr32 .\dlls\CMDLGES.DLL /s 
+regsvr32 .\dlls\COMCAT.DLL /u /s 
+regsvr32 .\dlls\COMCAT.DLL /s 
+regsvr32 .\dlls\COMDLG32.DLL /u /s 
+regsvr32 .\dlls\COMDLG32.DLL /s 
+regsvr32 .\dlls\MSVBVM60.DLL /u /s 
+regsvr32 .\dlls\MSVBVM60.DLL /s 
+regsvr32 .\dlls\OLEAUT32.DLL /u /s 
+regsvr32 .\dlls\OLEAUT32.DLL /s 
+regsvr32 .\dlls\OLEPRO32.DLL /u /s 
+regsvr32 .\dlls\OLEPRO32.DLL /s 
+regsvr32 .\dlls\SS70PP.dll /u /s 
+regsvr32 .\dlls\SS70PP.dll /s 
+regsvr32 .\dlls\TABCTES.DLL /u /s 
+regsvr32 .\dlls\TABCTES.DLL /s 
+regsvr32 .\dlls\VB6ES.DLL /u /s 
+regsvr32 .\dlls\VB6ES.DLL /s 
+regsvr32 .\dlls\VB6STKIT.DLL /u /s 
+regsvr32 .\dlls\VB6STKIT.DLL /s 
+
+regsvr32 .\ocxs\Comdlg32.ocx /u /s 
+regsvr32 .\ocxs\Comdlg32.ocx /s 
+regsvr32 .\ocxs\CSDStaticLabel.ocx /u /s 
+regsvr32 .\ocxs\CSDStaticLabel.ocx /s 
+regsvr32 .\ocxs\Edt32x20.ocx /u /s 
+regsvr32 .\ocxs\Edt32x20.ocx /s 
+regsvr32 .\ocxs\MSCHRT20.OCX /u /s 
+regsvr32 .\ocxs\MSCHRT20.OCX /s 
+regsvr32 .\ocxs\MSCOMCT2.OCX /u /s 
+regsvr32 .\ocxs\MSCOMCT2.OCX /s 
+regsvr32 .\ocxs\MSCOMCTL.OCX /u /s 
+regsvr32 .\ocxs\MSCOMCTL.OCX /s 
+regsvr32 .\ocxs\MSCOMM32.OCX /u /s 
+regsvr32 .\ocxs\MSCOMM32.OCX /s 
+regsvr32 .\ocxs\msscript.ocx /u /s 
+regsvr32 .\ocxs\msscript.ocx /s 
+regsvr32 .\ocxs\picclp32.ocx /u /s 
+regsvr32 .\ocxs\picclp32.ocx /s 
+regsvr32 .\ocxs\RICHTX32.OCX /u /s 
+regsvr32 .\ocxs\RICHTX32.OCX /s 
+regsvr32 .\ocxs\tabctl32.ocx /u /s 
+regsvr32 .\ocxs\tabctl32.ocx /s 
+regsvr32 .\ocxs\THREED32.OCX /u /s 
+regsvr32 .\ocxs\THREED32.OCX /s 
+
+Espero que te sirva. 
+Atte. 
+
+Raul. - Argentina
